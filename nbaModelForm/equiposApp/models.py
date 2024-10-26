@@ -22,13 +22,9 @@ class Equipo(models.Model):
             )
         ]
     )
-    campeonatos = models.CharField(
-        max_length=30,
+    campeonatos = models.IntegerField(
         validators=[
-            RegexValidator(
-                regex='^[a-zA-Z ]*$',
-                message='Nombre invalido, solo letras.'
-            )
+            MinValueValidator(0, message='El número de campeonatos no puede ser negativo')
         ]
     )
     conferencia = models.CharField(

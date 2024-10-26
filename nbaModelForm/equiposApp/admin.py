@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Equipo
 
-# Register your models here.
+class EquipoAdmin(admin.ModelAdmin):
+    list_display = ['nombre', 'ciudad', 'campeonatos', 'conferencia', 'estadio', 'colores', 'liga']
+admin.site.register(Equipo, EquipoAdmin)

@@ -13,7 +13,7 @@ def actualizarEquipo(request, id):
         form = FormEquipo(request.POST, instance=proyectos)
         if form.is_valid():
             form.save()
-        return index(request)
+            return redirect('../equipos/')
     data = {'form' : form}
     return render(request, 'equiposApp/agregarEquipo.html', data)
 
