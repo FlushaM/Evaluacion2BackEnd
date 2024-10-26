@@ -23,3 +23,22 @@ def eliminarEquipo(request, id):
     print(id)
     proyectos.delete()
     return redirect('../equipos/')
+
+
+def agregarEquipo(request):
+    if request.method == 'POST':
+        form = FormEquipo(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('../')  
+    else:
+        form = FormEquipo()
+    
+    data = {'form': form}
+    return render(request, 'Equipo/agregarEquipo.html', data)
+
+
+def listadoEquipos(request):
+    equipos = Equipo.objects.all()
+    data = {'equipos' : equipos}
+    return render (request, 'Equipo/equipos.html' , data)

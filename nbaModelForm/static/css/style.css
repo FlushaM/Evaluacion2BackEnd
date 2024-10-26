@@ -1,0 +1,26 @@
+.full-height {
+    height: 100vh; 
+    object-fit: cover; 
+}
+
+.form-container {
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-box {
+    background-color: #f8f9fa; 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #17a2b8; 
+    text-align: center;
+    margin-bottom: 20px; 
+}

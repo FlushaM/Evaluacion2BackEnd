@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from equiposApp import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',views.index ),
+    path('equipos/',views.listadoEquipos),
+    path('agregarEquipo/',views.agregarEquipo),
+    path('eliminarEquipo/<int:id>',views.eliminarEquipo),
+    path('actualizarEquipo/<int:id>',views.actualizarEquipo),
 ]
